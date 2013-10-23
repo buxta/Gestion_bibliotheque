@@ -1,0 +1,10 @@
+connexion d'un usager pour réserver un document
+
+Recherche d'un document
+Emprunt d'un document
+
+Ajout d'un document
+
+Ajout d'un type de document
+
+Inscription d'un usager

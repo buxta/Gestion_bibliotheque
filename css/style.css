@@ -1,0 +1,219 @@
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+* {
+  border-sizing: border-box;
+  -moz-border-sizing: border-box;
+}
+body {
+  font-family: tahoma;
+  background: #2980b9;
+}
+header .content {
+  width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+h1 {
+  color: #2c3e50;
+}
+footer {
+  overflow: auto;
+  padding: 20px 0;
+}
+#logo {
+  font-family: 'Clicker Script';
+  display: block;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+#mainMenu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+#mainMenu ul li {
+  position: relative;
+  display: inline-block;
+}
+#mainMenu ul li a {
+  display: block;
+  float: left;
+  padding: 10px;
+  color: #ecf0f1;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #2980b9;
+}
+#mainMenu ul li a:hover,
+#mainMenu ul li a:focus {
+  background: #3498db;
+}
+#mainMenu ul li:hover #submenu,
+#mainMenu ul li:focus #submenu {
+  display: block;
+}
+#mainMenu #subMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+}
+#mainMenu #subMenu li {
+  display: block;
+  float: none;
+  white-space: nowrap;
+}
+#mainMenu #subMenu li a {
+  width: 100%;
+  text-align: left;
+}
+#mainMenu #subMenu li a.change {
+  border-top: 1px solid white;
+}
+legend {
+  color: #2c3e50;
+  font-size: 20px;
+}
+#main {
+  background: white;
+}
+#main .content {
+  min-height: 300px;
+  padding: 20px;
+  width: 900px;
+  margin: auto;
+}
+.input {
+  font-size: 18px;
+  border: 1px solid #2980b9;
+  padding: 10px;
+  width: 300px;
+  color: #2c3e50;
+}
+.input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+.button {
+  width: 300px;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #2980b9;
+  background: #2980b9;
+  font-size: 18px;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+.button:hover,
+.button:focus {
+  background: #3498db;
+  border-color: #3498db;
+}
+.button.alert {
+  border: 1px solid #e74c3c;
+  background: #e74c3c;
+  color: white;
+}
+.button.alert:hover,
+.button.alert:focus {
+  background: #d62c1a;
+  border-color: #d62c1a;
+}
+.inputContainer {
+  padding: 10px;
+  float: left;
+  width: 300px;
+}
+.inputContainer label {
+  width: 265px;
+  text-align: left;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+form {
+  margin-bottom: 0;
+}
+form .button {
+  float: left;
+}
+fieldset {
+  border: none;
+  text-align: center;
+}
+label {
+  color: #2980b9;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+}
+label:hover,
+label:focus {
+  color: #3498db;
+}
+form .inputs {
+  position: relative;
+  display: inline-block;
+}
+form .formInfo {
+  text-align: right;
+  display: block;
+  float: right;
+  width: 300px;
+  font-size: 12px;
+  color: #2980b9;
+  padding: 10px;
+}
+.info {
+  color: #2980b9;
+}
+input.block {
+  padding: 10px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+table.default {
+  width: 100%;
+}
+th {
+  background: #a0cfee;
+}
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+tr {
+  background: #b6daf2;
+  border: 1px solid white;
+}
+tr:hover,
+tr:focus,
+tr.hover {
+  background: #a0cfee;
+}
+.actions {
+  text-align: center;
+}
+.delete {
+  font-weight: bold;
+  color: #2c3e50;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  float: none !important;
+  vertical-align: middle;
+  font-size: inherit;
+}
+.ref {
+  text-align: center;
+}

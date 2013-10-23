@@ -1,0 +1,256 @@
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+
+@regular : #2c3e50;
+@clear : #ecf0f1;
+@color1 : #2980b9;
+@color2 : #3498db;
+@alert : #e74c3c;
+
+@siteWidth:900px;
+
+* {
+	border-sizing:border-box;
+	-moz-border-sizing:border-box;
+}
+
+body {
+	font-family: tahoma;	
+	background: @color1;
+}
+
+header {
+	.content {
+		width: @siteWidth;
+		margin: 0 auto;
+		position: relative;
+	}
+}
+
+h1 {
+	color:@regular;
+}
+
+footer {
+	overflow: auto;
+	padding: 20px 0;
+}
+
+#logo {
+	font-family: 'Clicker Script';
+	display: block;
+	font-size: 40px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+}
+
+#mainMenu {
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		text-align: center;
+		li {
+			position: relative;
+			display: inline-block;
+			a {
+				display: block;
+				float: left;
+				padding: 10px;
+				color:@clear;
+				text-decoration: none;
+				text-transform: uppercase;
+				background: @color1;
+				&:hover,
+				&:focus {
+					background: @color2;
+				}
+			}
+			&:hover,
+			&:focus {
+				#submenu {
+					display: block;
+				}
+			}
+		}
+	}
+	#subMenu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		z-index:5;
+		li {
+			display: block;			
+			float: none;
+			white-space: nowrap;
+			a {
+				width: 100%;
+				text-align: left;
+				&.change {
+					border-top: 1px solid white;
+				}
+			}
+		}
+	}
+}
+
+legend {
+	color:@regular;
+	font-size: 20px;
+}
+
+#main {
+	background: white;
+	.content {
+		min-height: 300px;
+		padding: 20px;
+		width: @siteWidth;
+		margin: auto;
+	}
+}
+
+.input {
+	font-size: 18px;
+	border: 1px solid @color1;
+	padding: 10px;
+	width: 300px;
+	color:@regular;
+	&:focus {
+		border-color:@color2;
+		outline:none;
+	}
+}
+
+.button {
+	width: 300px;
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid @color1;
+	background: @color1;
+	font-size: 18px;
+	color:@clear;
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		background:@color2;
+		border-color:@color2;
+	}
+	&.alert {
+		border: 1px solid @alert;
+		background: @alert;
+		color:white;
+		&:hover,
+		&:focus {
+			background:darken(@alert, 10%);
+			border-color:darken(@alert, 10%);
+		}
+	}
+}
+
+.inputContainer {
+	padding: 10px;	
+	float: 	left;
+	width: 300px;
+	label {
+		width: 265px;
+		text-align: left;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+}
+
+form {
+	margin-bottom: 0;
+	.button {
+		float: left;
+	}
+}
+
+fieldset {
+	border: none;
+	text-align: center;
+}
+
+label {
+	color:@color1;
+	cursor: pointer;
+	padding: 10px;
+	display: inline-block;
+	&:hover,
+	&:focus {
+		color:@color2;
+	}
+}
+
+form {
+	.inputs {
+		position: relative;	
+		display: inline-block;	
+	}
+	.formInfo {
+		text-align: right;		
+		display: block;
+		float: right;
+		width: 300px;
+		font-size: 12px;
+		color:@color1;
+		padding: 10px;
+	}
+}
+
+.info {
+	color:@color1;
+}
+
+input.block {
+	padding: 10px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+table.default {
+	width: 100%;
+}
+th {
+	background: lighten(@color2, 25%);
+}
+th, td {
+	padding: 10px;
+	text-align: left;
+}
+tr {
+	background: lighten(@color2, 30%);
+	border:1px solid white;
+	&:hover,
+	&:focus,
+	&.hover {
+		background: lighten(@color2, 25%);
+	}
+}
+
+.actions {
+	text-align: center;
+}
+
+&.delete {
+	font-weight: bold;
+	color:@regular;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	float: none !important;
+	vertical-align: middle;
+	font-size: inherit;
+}
+
+.ref {
+	text-align: center;	
+}
