@@ -2,5 +2,5 @@
 <h2>Todo list</h2>
 <ul>
 	<li>Créer les emprunts !</li>
-	<li>TEsttttt !</li>
+	
 </ul>
