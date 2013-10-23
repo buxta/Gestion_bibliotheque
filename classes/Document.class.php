@@ -35,6 +35,7 @@ class Document
       $requete = $this->connection->query($sql);
       $requete->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Document');
       $listDocument = $requete->fetchAll();
+      var_dump($listDocument);
       return $listDocument;
   }
 
