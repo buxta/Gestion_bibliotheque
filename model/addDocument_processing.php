@@ -30,6 +30,13 @@
 			$info[] = "Veuillez entrer un code, maroufle.";
 		}
 
+		if(isset($_POST['addDocument_aEmporter'])) {
+			$aEmporter = $_POST['addDocument_aEmporter'];
+		}
+		else {
+			$aEmporter = 0;
+		}
+
 		if(!empty($_POST['addDocument_documentRef'])) {
 			$documentRef = $_POST['addDocument_documentRef'];
 		}
@@ -41,6 +48,7 @@
 		if (empty($info)) {
 			$data['titre'] = $titre;
 			$data['code'] = $code;
+			$data['aEmporter'] = $aEmporter;
 			$data['documentRef'] = $documentRef;
 			$data['idTypeDocument'] = $idTypeDocument;
 			// On crée une instance de User
