@@ -5,6 +5,7 @@ class Document
   private $idDocument;
   private $titre;
   private $code;
+  private $aEmporter;
   private $documentRef;
   private $idTypeDocument;
 
@@ -18,12 +19,14 @@ class Document
     $requete = $this->connection->prepare("INSERT INTO `document`(
       `titre`,
       `code`,
+      `aEmporter`,
       `documentRef`,
       `idTypeDocument`)
-    VALUES (:titre, :code, :documentRef, :idTypeDocument)");
+    VALUES (:titre, :code, :aEmporter, :documentRef, :idTypeDocument)");
     
     $requete->bindParam(":titre", $data['titre']);
     $requete->bindParam(":code", $data['code']);
+    $requete->bindParam(":aEmporter", $data['aEmporter']);
     $requete->bindParam(":documentRef", $data['documentRef']);
     $requete->bindParam(":idTypeDocument", $data['idTypeDocument']);
     return $requete->execute();
@@ -31,7 +34,7 @@ class Document
 
   public function getList()
   {
-      $sql = 'SELECT idDocument, titre, code, documentRef, idTypeDocument FROM document ORDER BY idDocument DESC';
+      $sql = 'SELECT idDocument, titre, code, aEmporter documentRef, idTypeDocument FROM document ORDER BY idDocument DESC';
       $requete = $this->connection->query($sql);
       $requete->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Document');
       $listDocument = $requete->fetchAll();
@@ -186,6 +189,30 @@ class Document
     public function setIdTypeDocument($idTypeDocument)
     {
         $this->idTypeDocument = $idTypeDocument;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of aEmporter.
+     *
+     * @return mixed
+     */
+    public function getAEmporter()
+    {
+        return $this->aEmporter;
+    }
+    
+    /**
+     * Sets the value of aEmporter.
+     *
+     * @param mixed $aEmporter the a emporter
+     *
+     * @return self
+     */
+    public function setAEmporter($aEmporter)
+    {
+        $this->aEmporter = $aEmporter;
 
         return $this;
     }

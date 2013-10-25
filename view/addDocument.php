@@ -43,8 +43,10 @@
 					?>
 				</select>
 			</div>
-			<br>
-			<div class="inputcontainer"></div>
+			<br>			
+			<div class="inputContainer">
+				<label for="addDocument_aEmporter">Peut être emporté à domicile</label><input class="block" type="checkbox" name="addDocument_aEmporter" id="addDocument_aEmporter" value="1">
+			</div>
 			<input type="submit" class="button" value="Ajouter un document" name="addDocument_submit">
 			<br>
 			<div class="formInfo">Tous les champs sont obligatoires</div>
