@@ -34,6 +34,6 @@
 
 	$_SESSION['info'] = $info; // Met les messages d'erreurs dans une variable de session
 
-	// On redirige sur la page précédente
+	// On dirige vers la page de résultat
 	header("location: ../index.php?p=listResult");
  ?>
