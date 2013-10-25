@@ -28,9 +28,13 @@
 		<td><?=$user->getDateInscription()?></td>
 		<td><?=$user->getAdmin()?></td>
 		<td class="actions">
-			<form method="POST" action="/model/delUser_processing.php?<?=$_SERVER['QUERY_STRING']?>">
+			<form method="POST" action="index.php?p=borrowDocument">
 				<input type="hidden" name="delUser_idUsager" value="<?=$user->getIdUsager()?>">
-				<input type="submit" class="button alert delete" name="delUser_submit" value="X">
+				<input type="submit" class="button alert delete" name="delUser_submit" value="★" title="Emprunter un document">
+			</form><!--
+			--><form method="POST" action="/model/delUser_processing.php?<?=$_SERVER['QUERY_STRING']?>">
+				<input type="hidden" name="delUser_idUsager" value="<?=$user->getIdUsager()?>">
+				<input type="submit" class="button alert delete" name="delUser_submit" value="X" title="Supprimer l'utilisateur">
 			</form>
 		</td>
 	</tr>

@@ -201,6 +201,10 @@ tr.hover {
 .actions {
   text-align: center;
 }
+.actions form {
+  display: inline-block;
+  margin: 0 10px;
+}
 .delete {
   font-weight: bold;
   color: #2c3e50;

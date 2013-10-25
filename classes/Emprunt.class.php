@@ -5,6 +5,7 @@ class Emprunt
   private $idEmprunt;
   private $idUsager;
   private $idDocument;
+  private $aEmporter;
   private $dateEmprunt;
   private $dateRetour;
 
@@ -13,21 +14,27 @@ class Emprunt
     $this->connection = SinglePDO::getInstance();
   }
 
-  public function borrow($idUsager, $idDocument)
+  public function borrow($idUsager, $idDocument, $aEmporter)
   {
-
     $requete = $this->$connection->prepare("
       INSERT INTO emprunt
-      (idUsager, idDocument, dateEmprunt, dateRetour)
+      (idUsager, idDocument, aEmporter, dateEmprunt, dateRetour)
       VALUES
-      (:idUsager, :idDocument, NOW(),
-        (SELECT nbJourEmprunt FROM document
-          JOIN typeDocument
-          USING(idTypeDocument)
-          WHERE idDocument = :idDocument
+      (:idUsager, :idDocument, :aEmporter, NOW(),
+        (SELECT DATE_ADD(NOW(), INTERVAL nbJourEmprunt DAY)
+            FROM document
+            JOIN typeDocument
+            USING(idTypeDocument)
+            WHERE idDocument = :idDocument
         )
       )
-      ");
+    ");
+
+    $requete->bindParam('idUsager', $idUsager);
+    $requete->bindParam('idDocument', $idDocument);
+    $requete->bindParam('aEmporter', $aEmporter);
+
+    return $requete->execute();
   }
 
     /**
@@ -146,6 +153,30 @@ class Emprunt
     public function setDateRetour($dateRetour)
     {
         $this->dateRetour = $dateRetour;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of aEmporter.
+     *
+     * @return mixed
+     */
+    public function getAEmporter()
+    {
+        return $this->aEmporter;
+    }
+    
+    /**
+     * Sets the value of aEmporter.
+     *
+     * @param mixed $aEmporter the a emporter
+     *
+     * @return self
+     */
+    public function setAEmporter($aEmporter)
+    {
+        $this->aEmporter = $aEmporter;
 
         return $this;
     }

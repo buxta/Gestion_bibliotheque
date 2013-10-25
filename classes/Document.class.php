@@ -8,6 +8,7 @@ class Document
   private $aEmporter;
   private $documentRef;
   private $idTypeDocument;
+  private $disponible;
 
   public function __construct()
   {
@@ -34,7 +35,7 @@ class Document
 
   public function getList()
   {
-      $sql = 'SELECT idDocument, titre, code, aEmporter documentRef, idTypeDocument FROM document ORDER BY idDocument DESC';
+      $sql = 'SELECT idDocument, titre, code, document.aEmporter, documentRef, idTypeDocument, disponible, dateRetour FROM document ORDER BY idDocument DESC';
       $requete = $this->connection->query($sql);
       $requete->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Document');
       $listDocument = $requete->fetchAll();
@@ -213,6 +214,30 @@ class Document
     public function setAEmporter($aEmporter)
     {
         $this->aEmporter = $aEmporter;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of disponible.
+     *
+     * @return mixed
+     */
+    public function getDisponible()
+    {
+        return $this->disponible;
+    }
+    
+    /**
+     * Sets the value of disponible.
+     *
+     * @param mixed $disponible the disponible
+     *
+     * @return self
+     */
+    public function setDisponible($disponible)
+    {
+        $this->disponible = $disponible;
 
         return $this;
     }
